@@ -4,17 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
     tools:context=".FirstFragment">
 
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gauge_first"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        gauge:initialValue="0"
+        gauge:maxValue="50"
+        gauge:minValue="-50"
+        gauge:totalNicks="100"
+        gauge:valuePerNick="1" />
 
     <Button
         android:id="@+id/button_first"
@@ -24,5 +34,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintTop_toBottomOf="@id/gauge_first" />
 </androidx.constraintlayout.widget.ConstraintLayout>
