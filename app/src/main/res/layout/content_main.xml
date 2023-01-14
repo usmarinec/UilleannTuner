@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gauge="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <Button
+        android:id="@+id/button_chanter"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Chanter"
+        app:layout_constraintBottom_toTopOf="@id/centsDiff_textView"
+        app:layout_constraintEnd_toStartOf="@id/button_drones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_drones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="Drones"
+        app:layout_constraintBottom_toTopOf="@id/centsDiff_textView"
+        app:layout_constraintEnd_toStartOf="@id/button_regs"
+        app:layout_constraintStart_toEndOf="@id/button_chanter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_regs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Regs"
+        app:layout_constraintBottom_toTopOf="@id/centsDiff_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_drones"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.everseat.textviewlabel.TextViewLabel
+        android:id="@+id/centsDiff_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:labelColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/gauge_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.nitri.gauge.Gauge
+        android:id="@+id/gauge_first"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toTopOf="@id/nav_host_fragment_content_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/centsDiff_textView"
+        gauge:initialValue="0"
+        gauge:maxValue="50"
+        gauge:minValue="-50"
+        gauge:totalNicks="100"
+        gauge:valuePerNick="1" />
 
     <fragment
         android:id="@+id/nav_host_fragment_content_main"
@@ -14,6 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gauge_first"
         app:navGraph="@navigation/nav_graph" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
