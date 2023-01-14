@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 import com.github.uilleanntuner.databinding.FragmentChanterBinding
-import com.github.uilleanntuner.databinding.ContentMainBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -33,14 +30,6 @@ class FragmentChanter : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        this.tuningComponent = CHANTER
-//        setNavButtons()
-//        view.findViewById<Button>(R.id.button_drones).setOnClickListener {
-//            findNavController().navigate(R.id.action_ChanterFragment_to_DronesFragment)
-//        }
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_ChanterFragment_to_DronesFragment)
-        }
     }
 
     override fun onDestroyView() {

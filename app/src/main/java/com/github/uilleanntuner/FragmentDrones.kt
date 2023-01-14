@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.github.uilleanntuner.databinding.FragmentDronesBinding
 
 /**
@@ -31,10 +30,6 @@ class FragmentDrones : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_DronesFragment_to_ChanterFragment)
-//        }
     }
 
     override fun onDestroyView() {
