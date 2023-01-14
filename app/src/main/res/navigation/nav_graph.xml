@@ -3,26 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ChanterFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.github.uilleanntuner.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/ChanterFragment"
+        android:name="com.github.uilleanntuner.FragmentChanter"
+        android:label="@string/chanter_fragment_label"
+        tools:layout="@layout/fragment_chanter">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ChanterFragment_to_DronesFragment"
+            app:destination="@id/DronesFragment" />
+        <action
+            android:id="@+id/action_ChanterFragment_to_RegsFragment"
+            app:destination="@id/RegsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.github.uilleanntuner.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/DronesFragment"
+        android:name="com.github.uilleanntuner.FragmentDrones"
+        android:label="@string/drones_fragment_label"
+        tools:layout="@layout/fragment_drones">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_DronesFragment_to_ChanterFragment"
+            app:destination="@id/ChanterFragment" />
+        <action
+            android:id="@+id/action_DronesFragment_to_RegsFragment"
+            app:destination="@id/RegsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegsFragment"
+        android:name="com.github.uilleanntuner.FragmentRegs"
+        android:label="@string/regs_fragment_label"
+        tools:layout="@layout/fragment_regs" >
+        <action
+            android:id="@+id/action_RegsFragment_to_ChanterFragment"
+            app:destination="@id/ChanterFragment" />
+        <action
+            android:id="@+id/action_RegsFragment_to_DronesFragment"
+            app:destination="@id/DronesFragment" />
     </fragment>
 </navigation>
